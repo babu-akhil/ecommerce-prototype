@@ -50,7 +50,7 @@ function Shop() {
       }}
     >
       <Navbar page="Shop" numberItems={number} toggleCartVisibility = {toggleCartVisibility}/>
-      <ProductsDisplay Cart={Cart} changeCart={handleChangeCart} CartDetails = {SimplifiedCart} cartVisibility = {cartVisibility}/>
+      <ProductsDisplay Cart={Cart} changeCart={handleChangeCart} CartDetails = {SimplifiedCart} cartVisibility = {cartVisibility} numberItems = {number}/>
       <Footer />
     </div>
   );
