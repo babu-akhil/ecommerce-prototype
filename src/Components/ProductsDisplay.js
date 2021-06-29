@@ -12,11 +12,20 @@ import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
 import LocalMall from '@material-ui/icons/LocalMall';
-
-
+import TextField from '@material-ui/core/TextField';
 
 function CardFunc(props) {
-    console.log(props.product.images)
+    let [quantityInput,setQuantityInput] = useState(1);
+
+
+    function changeQuantityInput(e) {
+        setQuantityInput(parseInt(e.target.value))
+    }
+
+    function pushToCart() {
+        let order = {...props.product, quantity: quantityInput}
+        props.addToCart(order)
+    }
 
     return (
     <Card className = 'Card'>
@@ -40,13 +49,21 @@ function CardFunc(props) {
         </div>
         </CardContent>
         <CardActions>
-            <Button size = 'small' color = 'primary'>
+            <TextField
+            id="standard-number"
+            type="number"
+            className = 'quantity'
+            value = {quantityInput}
+            InputProps={{ inputProps: { min: 0} }}
+            onChange = {changeQuantityInput}
+            default = {1}
+            InputLabelProps={{
+                shrink: true,
+            }}
+            />
+            <Button size = 'small' color = 'primary' onClick = {pushToCart}>
                     <AddShoppingCartIcon />
                         Add to Cart
-            </Button>
-            <Button size = 'small' color = 'primary'>
-                    <LocalMall />
-                        Buy now
             </Button>
         </CardActions>
     </Card>
@@ -55,10 +72,11 @@ function CardFunc(props) {
 }
 
 
-function ProductsDisplay() {
+function ProductsDisplay(props) {
+
     return (
         <Grid container className = 'ProductsDisplay' spacing = {2}>
-                {productsData.map((product) => {return <CardFunc product = {product} key = {product.id}/>})}
+                {productsData.map((product) => {return <CardFunc product = {product} key = {product.id} addToCart = {props.changeCart}/>})}
         </Grid>
     )
 }
