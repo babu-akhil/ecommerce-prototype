@@ -74,11 +74,35 @@ function CardFunc(props) {
 
 function ProductsDisplay(props) {
 
+    console.log(props.CartDetails)
+
     return (
-        <Grid container className = 'ProductsDisplay' spacing = {2}>
-                {productsData.map((product) => {return <CardFunc product = {product} key = {product.id} addToCart = {props.changeCart}/>})}
-        </Grid>
-    )
+        <div className = 'ProductsDisplayContainer'>
+            <Grid container className = 'ProductsDisplay' spacing = {2}>
+                    {productsData.map((product) => {return <CardFunc product = {product} key = {product.id} addToCart = {props.changeCart}/>})}
+            </Grid>
+            <div className = 'Cart' style = {{visibility: props.cartVisibility?'visible':'hidden'}}>
+                {props.CartDetails.map((order) => {
+                    return (
+                    <div className = 'orderCard' key = {order.id}>
+                        <div className = 'order title'>
+                            {order.name}
+                        </div>
+                        <div className = 'order quantity'>
+                            {order.quantity}
+                        </div>
+                        <div className = 'order price'>
+                            ₹{order.quantity*order.price}
+                        </div>
+                    </div>
+                    )
+                })}
+                <div className = 'order total'>
+                    ₹{props.CartDetails.reduce((total, order) => {return total + (order.quantity*order.price)}, 0)}
+                </div>
+            </div>
+        </div>
+        )
 }
 
 export default ProductsDisplay

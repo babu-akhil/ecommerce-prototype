@@ -16,7 +16,7 @@ function Navbar(props) {
                 <a href = './shop' className = {props.page == 'Shop'?'item-active': 'item'} >Shop</a>
             </div>
             <div className = 'right'>
-                <IconButton className = 'Cart'>
+                <IconButton className = 'Cart' onClick = {props.toggleCartVisibility}>
                     <Badge className = 'cartBadge' badgeContent = {props.numberItems} color = 'secondary' showZero><ShoppingBasket/></Badge>
                 </IconButton>
             </div>

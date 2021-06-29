@@ -37,7 +37,7 @@ body {
     background-color: rgb(7, 19, 73);
     color: white;
     margin: none;
-    padding: 10px;
+    height: 7vh;
     position: fixed;
     top: 0;
     width: 100%;
@@ -107,7 +107,7 @@ body {
 
 .Card {
     padding: 10px;
-
+    margin: 20px;
 }
 
 .Card .image img {
@@ -121,7 +121,7 @@ body {
     padding-right: 50px !important;
     padding-bottom: 50px !important;
     height: 93vh;
-    width: 100vw !important;
+    width: 95vw !important;
 }
 
 .Card .name {
@@ -164,4 +164,19 @@ body {
 
 .MuiInputBase-input {
     text-align: right !important;
+}
+
+.ProductsDisplayContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ProductsDisplayContainer .Cart {
+    width: calc(max(15vw, 250px));
+    height: 93vh;
+    margin-top: 7vh !important;
+    z-index: 1;
+    background-color: white;
+    color: black !important;
 }
