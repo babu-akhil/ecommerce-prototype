@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/babu-akhil.github.io/ecommerce-prototype/static/css/main.5f51a218.chunk.css",
-    "main.js": "/babu-akhil.github.io/ecommerce-prototype/static/js/main.21a791da.chunk.js",
-    "main.js.map": "/babu-akhil.github.io/ecommerce-prototype/static/js/main.21a791da.chunk.js.map",
+    "main.js": "/babu-akhil.github.io/ecommerce-prototype/static/js/main.d4d77ac9.chunk.js",
+    "main.js.map": "/babu-akhil.github.io/ecommerce-prototype/static/js/main.d4d77ac9.chunk.js.map",
     "runtime-main.js": "/babu-akhil.github.io/ecommerce-prototype/static/js/runtime-main.78e915b6.js",
     "runtime-main.js.map": "/babu-akhil.github.io/ecommerce-prototype/static/js/runtime-main.78e915b6.js.map",
     "static/js/2.16ac6eca.chunk.js": "/babu-akhil.github.io/ecommerce-prototype/static/js/2.16ac6eca.chunk.js",
@@ -41,6 +41,6 @@
     "static/js/runtime-main.78e915b6.js",
     "static/js/2.16ac6eca.chunk.js",
     "static/css/main.5f51a218.chunk.css",
-    "static/js/main.21a791da.chunk.js"
+    "static/js/main.d4d77ac9.chunk.js"
   ]
 }
